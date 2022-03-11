@@ -1,0 +1,23 @@
+.nav{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--color);
+    align-items: center;
+    padding: .5em 2em;
+}
+
+.nav .container{
+    display: block;
+    width: 5em;
+    padding: .5em;
+}
+
+.nav .container .logo{
+    width: 100%
+}
+
+.nav .ul{
+    display: flex;
+    gap: 1em;
+    list-style: none;
+}

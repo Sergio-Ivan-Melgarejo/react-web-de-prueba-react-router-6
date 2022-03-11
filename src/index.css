@@ -1,3 +1,23 @@
+:root{
+  --bg-color:#E9E5D6;
+  --color:#ACB992;
+  --text-color:#464E2E;
+  --text-color-strong:#362706;
+}
+
+.dark{
+  --bg-color:#362706;
+  --color:#464E2E;
+  --text-color:#ACB992;
+  --text-color-strong:#E9E5D6;
+}
+
+*, *::after, *::before{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -11,3 +31,51 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+a{
+  text-decoration: none;
+}
+
+.btn{
+  display: inline-block;
+  color: var(--text-color-strong);
+  text-align: center;
+  border: .2em solid var(--color);
+  background-color: var(--color);
+  border-radius: 3px;
+  outline-color: var(--text-color-strong);
+  transition: color .3s ease-in-out;
+  font-size: 1.1em;
+}
+
+.btn span{
+  display: block;
+  padding: .5em 1em;
+}
+
+.btn:hover{
+  color: var(--bg-color);
+  outline-color: var(--bg-color );
+}
+
+.btn .sub-line{
+  height: .2em;
+  background-color: var(--text-color-strong);
+  width: 100%;
+  transform: scaleX(.0);
+  transition: transform .3s ease-in-out, color .3s ease-in-out;
+}
+
+.btn:hover > .sub-line{
+  background-color: var(--bg-color);
+  transform: scaleX(1);
+}
+
+.btn.active .sub-line{
+  transform: scaleX(1);
+}
+
+/* .btn-color{}
+.btn-color:hover{
+
+} */

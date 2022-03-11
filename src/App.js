@@ -1,23 +1,39 @@
-import logo from './logo.svg';
+import { useState } from 'react';
+import { Route, Routes, NavLink } from 'react-router-dom';
 import './App.css';
+import Nav from './components/Nav';
+
+import Home from './page/Home';
+import Category from './page/Category';
+import Products from './page/Products';
+
+// react 
+// tacos => products
+// bots
+// search-page => category
+
+// spa - api Lorem space - react ruter dom
 
 function App() {
+  const [dataApp, setDataApp] = useState({
+    dark: true
+  })
+
+  const products = [
+    "game" ,"album", "movie", "watch", "book", "shoes", "fashion", "face"
+  ]
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={dataApp.dark ? "App dark" : "App"}>
+      <div className='container-App'>
+        <Nav />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/category' element={<Category products={products} /> } />
+          <Route path='/products:keywords' element={<Products /> } />
+          <Route path='*' element={<h1>no existe pagina</h1> } />
+        </Routes>
+      </div>
     </div>
   );
 }
