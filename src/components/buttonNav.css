@@ -1,0 +1,92 @@
+.buttonNav__button {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    border: none;
+    background-color: transparent;
+    padding: 1em;
+    cursor: pointer;
+    font-size: .7em;
+}
+
+.buttonNav__button:hover{
+    outline-color: var(--color);
+}
+
+.buttonNav__line{
+    width: 5em;
+    height: .5em;
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 0 .8em rgba(0,0,0,.4);
+    background-color: var(--text-color-strong);
+    transition: background-color .5s ease, outline-color .5s ease, box-shadow .5s ease;
+}
+
+.dark .buttonNav__line{
+    background-color: var(--text-color-strong);
+    box-shadow: 0 0 .8em rgba(255, 255, 255, 0.4);
+}
+
+.buttonNav__button:hover > .buttonNav__line{
+    background-color: var(--color);
+    outline-color: var(--color);
+}
+
+.active .buttonNav__line-1{animation: day2-appear-liner-1 1s forwards}
+.active .buttonNav__line-2{animation: day2-appear-liner-2 1s forwards}
+.active .buttonNav__line-3{animation: day2-appear-liner-3 1s forwards}
+
+.no-animation .buttonNav__line-1,
+.no-animation .buttonNav__line-2,
+.no-animation .buttonNav__line-3{animation: none;}
+
+@keyframes day2-appear-liner-1 {
+    0%{transform: translateY(0) }
+    50%{transform: translateY(1.5em) rotate(0)}
+    100%{transform: translateY(1.5em) rotate(45deg)}
+}
+
+@keyframes day2-appear-liner-2 {
+    0%{transform: scale(100%)}
+    50%{transform: scale(70%)}
+    51%{transform: scale(0%)}
+    100%{transform: scale(0%)}
+}
+
+@keyframes day2-appear-liner-3 {
+    0%{transform: translateY(0) }
+    50%{transform: translateY(-1.5em) rotate(0)}
+    100%{transform: translateY(-1.5em) rotate(135deg)}
+}
+
+.buttonNav__line-1{animation: day2-disappear-liner-1 1s forwards}
+.buttonNav__line-2{animation: day2-disappear-liner-2 1s forwards}
+.buttonNav__line-3{animation: day2-disappear-liner-3 1s forwards}
+
+@keyframes day2-disappear-liner-1 {
+    0%{transform: translateY(1.5em) rotate(45deg)}
+    50%{transform: translateY(1.5em) rotate(0)}
+    100%{transform: translateY(0)}
+}
+
+@keyframes day2-disappear-liner-2 {
+    0%{transform: scale(0%)}
+    49%{transform: scale(0%)}
+    50%{transform: scale(70%)}
+    100%{transform: scale(100%)}
+}
+
+@keyframes day2-disappear-liner-3 {
+    0%{transform: translateY(-1.5em) rotate(135deg)}
+    50%{transform: translateY(-1.5em) rotate(0)}
+    100%{transform: translateY(0)}
+}
+
+
+@media screen and (min-width: 966px) {
+    .buttonNav__button {
+        visibility: hidden;
+    }
+    
+}

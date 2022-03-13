@@ -1,14 +1,13 @@
 import { useState } from 'react';
-import { Route, Routes, NavLink } from 'react-router-dom';
+import { Outlet, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Nav from './components/Nav';
 
 import Home from './page/Home';
-import Category from './page/Category';
-import Products from './page/Products';
+import Services from './page/Services';
 
 // react 
-// tacos => products
+// tacos => services
 // bots
 // search-page => category
 
@@ -19,20 +18,17 @@ function App() {
     dark: true
   })
 
-  const products = [
-    "game" ,"album", "movie", "watch", "book", "shoes", "fashion", "face"
-  ]
-
   return (
     <div className={dataApp.dark ? "App dark" : "App"}>
       <div className='container-App'>
         <Nav />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/category' element={<Category products={products} /> } />
-          <Route path='/products:keywords' element={<Products /> } />
-          <Route path='*' element={<h1>no existe pagina</h1> } />
-        </Routes>
+          <Routes>
+            <Route path='/' element={<Home/> } />
+            {/* <Route path='/services/:api' element={<Services />} >
+              <Route path='services' element={<h2>dentro de una api</h2>} />
+            </Route> */}
+            <Route path='*' element={<h1>no existe pagina</h1> } />
+          </Routes>
       </div>
     </div>
   );

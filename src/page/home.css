@@ -1,0 +1,8 @@
+.home .section{
+    min-height: 60vh;
+    border: 1px solid red;
+}
+
+.home img{
+    width: 50%;
+}

@@ -1,23 +1,172 @@
 .nav{
     display: flex;
     justify-content: space-between;
-    background-color: var(--color);
+    background-color: var(--bg-color);
     align-items: center;
-    padding: .5em 2em;
+    border-radius: 3em;
+    padding: .1em 2em;
+    margin-left: 6em;
+    box-shadow: var(--text-color-strong) 0 0 .5em inset;
+    transform: translate(100%) scale(.8);
+    visibility: hidden;
+    opacity: 1;
+    animation: appear-nav 1s forwards;
+    transition: box-shadow 1s ease;
+    margin-bottom: 2em;
+}
+@keyframes appear-nav {
+    0%{}
+    100%{
+        transform: translate(0) scale(1);
+        visibility: visible;
+    }
 }
 
+.nav:hover{
+    box-shadow: var(--text-color-strong) 0 0 .7em inset;
+}
+
+/* Shadow logo */
+.nav::after{
+    content: "";
+    position: absolute;
+    width: 4em;
+    height: 1em;
+    left: 0;
+    background-color: #00000030;
+    box-shadow: #00000030 0 0 .5em .5em;
+    transform: translate(-5em,4em) scaleY(.0) scaleX(.0);
+    animation: appear-logo-shadow .5s forwards;
+    animation-delay: 1.5s;
+}
+.dark .nav::after{
+    background-color: #ffffff30;
+    box-shadow: #ffffff30 0 0 .5em .5em;
+}
+@keyframes appear-logo-shadow {
+    0%{}
+    100%{
+        transform: translate(-5em,4em) scaleY(.1) scaleX(.5);
+    }
+}
+
+/* Logo */
 .nav .container{
     display: block;
-    width: 5em;
-    padding: .5em;
+    width: 4em;
+    height: 4em;
+    transform: translate(-7em,-6em) scale(.5);
+    visibility: hidden;
+    opacity: 0;
+    animation: appear-logo 1s forwards;
+    animation-delay: 1s;
+    transition: transform 1s ease;
+}
+@keyframes appear-logo {
+    0%{}
+    100%{
+        transform: translate(-7em,0) scale(1.2);
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.nav .container:hover{
+    outline-color: var(--color);
+}
+
+.nav .container::after,
+.nav .container::before{
+    content: "";
+    width: 4.4em;
+    height: 4.4em;
+    position: absolute;
+    border-color: var(--text-color-strong) transparent var(--text-color-strong) var(--text-color-strong);
+    border-width: .1em;
+    border-style: solid;
+    border-radius: 50%;
+    top: -.2em;
+    left: -.2em;
+    transition: transform ease 1s;
+}
+
+.nav .container::before{
+    width: 4.8em;
+    height: 4.8em;
+    border-color: var(--text-color-strong) transparent var(--text-color-strong) var(--text-color-strong);
+    border-width: .1em;
+    border-style: solid;
+    border-radius: 50%;
+    top: -.4em;
+    left: -.4em;
+}
+
+.nav .container:hover:before{
+    transform: rotate(360deg); 
+    border-color: var(--color) transparent var(--color) var(--color)
+}
+.nav .container:hover:after{
+    transform: rotate(-360deg); 
+    border-color: var(--color) transparent var(--color) var(--color)
 }
 
 .nav .container .logo{
-    width: 100%
+    width: 100%;
+    height: 100%;
+    display: block;
+    transition: all 1s;
+    background-color:var(--text-color-strong);
+    border-radius: 50%;
+}
+.nav .container:hover > .logo{
+    transform: rotate(360deg);
+    background-color:var(--color);
+    outline-color: var(--color);
 }
 
 .nav .ul{
     display: flex;
     gap: 1em;
     list-style: none;
+    transition: transform 1s ease, opacity 1s ease, visibility 1s ease;
 }
+
+@media screen and (max-width: 966px) {
+    .nav .ul{
+        padding: 1em;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        right: 2em;
+        top: 5em;
+        width: 50%;
+        border-radius: 10px;
+        font-size: 1.2em;
+        box-shadow: #00000020 0 0 .5em 0 inset;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }  
+    .nav .ul:hover{box-shadow: #00000040 0 0 1em 0 inset}
+    .dark .nav .ul{box-shadow: #ffffff20 0 0 .5em 0 inset}
+    .dark .nav .ul:hover{box-shadow: #ffffff40 0 0 1em 0 inset}
+
+    .nav.active .ul{
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+    }
+
+    .nav .li{
+        flex: 1;
+        width: 100%;
+    }
+    .nav .btn{
+        width: 100%;
+    }
+}
+@media screen and (min-width: 1440px) {
+}
+  

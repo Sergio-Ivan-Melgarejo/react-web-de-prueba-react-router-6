@@ -1,15 +1,15 @@
 :root{
-  --bg-color:#E9E5D6;
-  --color:#ACB992;
-  --text-color:#464E2E;
-  --text-color-strong:#362706;
+  --bg-color:#F5F2E7;
+  --color:#2666CF;
+  --text-color:#395B64;
+  --text-color-strong:#161818;
 }
 
 .dark{
-  --bg-color:#362706;
-  --color:#464E2E;
-  --text-color:#ACB992;
-  --text-color-strong:#E9E5D6;
+  --bg-color:#161818;
+  --color:#2666CF;
+  --text-color:#395B64;
+  --text-color-strong:#F5F2E7;
 }
 
 *, *::after, *::before{
@@ -37,15 +37,15 @@ a{
 }
 
 .btn{
+  font-size: 1em;
   display: inline-block;
   color: var(--text-color-strong);
   text-align: center;
-  border: .2em solid var(--color);
-  background-color: var(--color);
+  border: .2em solid transparent;
+  background-color: transparent;
   border-radius: 3px;
   outline-color: var(--text-color-strong);
   transition: color .3s ease-in-out;
-  font-size: 1.1em;
 }
 
 .btn span{
@@ -54,8 +54,8 @@ a{
 }
 
 .btn:hover{
-  color: var(--bg-color);
-  outline-color: var(--bg-color );
+  color: var(--color);
+  outline-color: var(--color);
 }
 
 .btn .sub-line{
@@ -63,11 +63,11 @@ a{
   background-color: var(--text-color-strong);
   width: 100%;
   transform: scaleX(.0);
-  transition: transform .3s ease-in-out, color .3s ease-in-out;
+  transition: transform .3s ease-in-out, background-color .3s ease-in-out;
 }
 
 .btn:hover > .sub-line{
-  background-color: var(--bg-color);
+  background-color: var(--color);
   transform: scaleX(1);
 }
 
