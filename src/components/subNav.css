@@ -1,0 +1,60 @@
+.sub-nav{
+    position: fixed;
+    bottom: .5em;
+    right: -23em;
+    padding: .5em 6em .5em .5em;
+    font-size: 1.2em;
+    border-radius: 5em;
+    box-shadow: var(--text-color-strong) 0 0 .5em inset;
+    border: 1px solid var(--text-color-strong);
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    transition: all ease 1s;
+}
+.sub-nav.active{
+    right: -5em;
+}
+
+.button-open-close{
+    padding: .5em .5em .4em .4em;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 1px solid var(--text-color-strong);
+    background-color: transparent;
+    transition: border-color .5s ease;
+}
+.button-open-close:hover{
+    border: 1px solid var(--color);
+}
+
+.button-open-close svg{
+    width: 2em;
+    fill: var(--text-color-strong);
+    transition: transform 1s ease;
+}
+
+.button-open-close:hover > svg{
+    transform: scale(1.2) rotate(-360deg);
+    fill: var(--color);
+}
+
+.sub-nav ul{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.sub-nav a{
+    color: var(--bg-color);
+    background-color: var(--text-color-strong);
+    padding: .6em 1em;
+    border-radius: 3em;
+    transition: background-color .5s ease;
+}
+
+.sub-nav a:hover{
+    background-color: var(--color);
+}
+

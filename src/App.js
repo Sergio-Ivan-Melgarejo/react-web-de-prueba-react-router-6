@@ -1,7 +1,9 @@
 import { useState } from 'react';
-import { Outlet, Route, Routes } from 'react-router-dom';
+import { Link, Outlet, Route, Routes } from 'react-router-dom';
 import './App.css';
+import Config from './components/Config';
 import Nav from './components/Nav';
+import Error from './page/404';
 
 import Home from './page/Home';
 import Services from './page/Services';
@@ -23,12 +25,15 @@ function App() {
       <div className='container-App'>
         <Nav />
           <Routes>
-            <Route path='/' element={<Home/> } />
-            {/* <Route path='/services/:api' element={<Services />} >
-              <Route path='services' element={<h2>dentro de una api</h2>} />
-            </Route> */}
-            <Route path='*' element={<h1>no existe pagina</h1> } />
+            <Route path='/' element={<Home/> } >
+            </Route>
+            <Route path='/services' element={<Services />} >
+              <Route path=':api' element={<Services />} ></Route>
+              <Route path='detalle' element={<h1>funciona</h1>} ></Route>
+            </Route>
+            <Route path='*' element={<Error />} />
           </Routes>
+          <Config dataApp={dataApp} setDataApp={setDataApp} />
       </div>
     </div>
   );

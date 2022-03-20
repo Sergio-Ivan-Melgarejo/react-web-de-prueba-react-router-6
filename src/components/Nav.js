@@ -25,25 +25,25 @@ const Nav = () => {
                     </NavLink>
                 </li>
                 <li className='li'>
-                    <NavLink className={({isActive})=> (isActive ? 'btn active' : 'btn')} to="/category" >
+                    <NavLink className={({isActive})=> (isActive ? 'btn active' : 'btn')} to="/services" >
                         <span>Services</span>
                         <div className='sub-line'></div>
                     </NavLink>
                 </li>
                 <li className='li'>
-                    <NavLink className={({isActive})=> (isActive ? 'btn active' : 'btn')} to="/category" >
+                    <NavLink className={({isActive})=> (isActive ? 'btn active' : 'btn')} to="/users" >
                         <span>Users</span>
                         <div className='sub-line'></div>
                     </NavLink>
                 </li>
                 <li className='li'>
-                    <NavLink className={({isActive})=> (isActive ? 'btn active' : 'btn')} to="/category" >
+                    <NavLink className={({isActive})=> (isActive ? 'btn active' : 'btn')} to="/coments" >
                         <span>Coments</span>
                         <div className='sub-line'></div>
                     </NavLink>
                 </li>
                 <li className='li'>
-                    <NavLink className={({isActive})=> (isActive ? 'btn active' : 'btn')} to="/category" >
+                    <NavLink className={({isActive})=> (isActive ? 'btn active' : 'btn')} to="/about" >
                         <span>About</span>
                         <div className='sub-line'></div>
                     </NavLink>

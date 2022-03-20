@@ -1,15 +1,17 @@
 :root{
   --bg-color:#F5F2E7;
   --color:#2666CF;
-  --text-color:#395B64;
   --text-color-strong:#161818;
 }
 
 .dark{
   --bg-color:#161818;
-  --color:#2666CF;
-  --text-color:#395B64;
+  --color:#61dbfb;
   --text-color-strong:#F5F2E7;
+}
+
+html{
+  scroll-behavior: smooth;
 }
 
 *, *::after, *::before{

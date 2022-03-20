@@ -1,50 +1,74 @@
-import React from 'react'
 import "./home.css"
 
 import imgDark from "../img/home-dark.svg"
 import imgLight from "../img/home-light.svg"
-import imgCatFacts from "../img/Cat-Facts.png"
-import { Link } from 'react-router-dom'
+import imgApi from "../img/What-is-an-API.png"
+import { Link, Outlet } from 'react-router-dom'
+import SubNav from "../components/SubNav"
 
 const Home = () => {
   const dark = true;
+
   return (
     <main className='home'>  
-      <section className='section'>
-        <div>
-        <h1>nombre de web</h1>
+    <Outlet/>
+      <section id="1" className='section'>
+        <div className='box-text home-box-text'>
+        <h1 className='title'>nombre de web</h1>
         <p>app de prueba de React ruter 6, usando algunas apis para rellenar</p>
         </div>
-        <div>
-          <img src={dark ? imgLight : imgDark} alt="developer" />
+        <div className='home-box-img'>
+          <img className='home-img' src={dark ? imgLight : imgDark} alt="developer" />
         </div>
       </section>
 
-      <section className='section'>
-        <div>
-          <h2>services</h2>
-          <p>pruebe el servicio de algunas de estas apis</p>
-          <ul>
-            <li>Cat Facts</li>
-            <li>CoinDesk</li>
-            <li>Bored</li>
-            <li>Agify.io</li>
-            <li>Genderize.io</li>
-            <li>Nationalize.io</li>
-            <li>Dogs</li>
-            <li>Jokes</li>
-          </ul>
+      <section id="2" className='section'>
+        <div className='box-text'>
+          <h2 className='subtitle'>services</h2>
+          <p className='text'>pruebe el servicio de algunas de estas apis</p>
+          <ol className='ol'>
+            <li className='li' >
+              <Link to="/services/CoinDesk">CoinDesk</Link>
+            </li>
+            <li className='li' >
+              <Link to="/services/Cat Facts" >Cat Facts</Link>
+            </li>
+            <li className='li' >
+              <Link to="/services/Bored" >Bored</Link>
+            </li>
+            <li className='li' >
+              <Link to="/services/Agify.io" >Agify.io</Link>
+            </li>
+            <li className='li' >
+              <Link to="/services/Genderize.io" >Genderize.io</Link>
+            </li>
+            <li className='li' >
+              <Link to="/services/Nationalize.io" >Nationalize.io</Link>
+            </li>
+            <li className='li' >
+              <Link to="/services/Dogs" >Dogs</Link>
+            </li>
+            <li className='li' >
+              <Link to="/services/Jokes" >Joke</Link>
+            </li>
+          </ol>
         </div>
-        <div>
-          <img src={imgCatFacts} alt={"Cat Facts"} />
-          <Link to={"/services/CatFacts"} >go now</Link>
-        </div>
+        <Link className='box-img' to={`/services/`} >
+          <img className='img' src={imgApi} alt="Api" />
+        </Link>
       </section>
       
-      <section className='section'>coments</section>
-      <section className='section'>usuarios</section>
-      <section className='section'>sobre mi</section>
+      <section id="3" className='section'>coments</section>
+      <section id="4" className='section'>usuarios</section>
+      <section id="5" className='section'>sobre mi</section>
       
+      <SubNav >
+        <a href="#1">1</a>
+        <a href="#2">2</a>
+        <a href="#3">3</a>
+        <a href="#4">4</a>
+        <a href="#5">5</a>
+      </SubNav>
     </main>
   )
 }

@@ -1,0 +1,21 @@
+.error{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 3em 1em;
+    min-height: 70vh;
+}
+
+.img-404,
+.title-404{
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+}
+
+.title-404{
+    color: rgb(224, 93, 75);
+    text-transform: uppercase;
+    padding: 1em 0;
+}
